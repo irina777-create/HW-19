@@ -53,6 +53,7 @@
  Порахувати, скільки приблизно днів прожив користувач (вік × 365.25),
  та округлити результат до цілого. Вивести отримане число.
 
+
  КРОК 10. Код підтвердження.
  Згенерувати випадкове чотиризначне ціле число від 1000 до 9999 включно.
  Вивести його.
@@ -156,5 +157,80 @@ let emailDomain = email.slice(atPosition + 1).toLowerCase();
 // Виводимо логін і домен
 console.log(emailLogin);  // Taras.Shevchenko
 console.log(emailDomain); // gmail.com
+
+// КРОК 6. Маска email
+
+let maskedEmail =
+    emailLogin.slice(0, 2) +
+    "***@" +
+    emailDomain;
+
+// Виводимо результат
+console.log(maskedEmail); // Ta***@gmail.com
+
+// КРОК 7. Перевірка повноліття
+
+// Перевіряємо, чи виповнилося користувачу 18 років
+let isAdult = age >= 18;
+
+// Виводимо значення та тип
+console.log(isAdult);        // true
+console.log(typeof isAdult); // boolean
+
+// Логічні вирази
+console.log(isAdult && isSubscribed); // true
+console.log(isAdult || isSubscribed); // true
+console.log(!isSubscribed);           // false
+
+// КРОК 8. Імʼя для показу
+
+// Якщо nickname немає, використовуємо fullName
+let displayName = nickname || fullName;
+
+// Виводимо результат
+console.log(displayName); // Taras Shevchenko
+
+// КРОК 9. Прожиті дні
+
+// Обчислюємо приблизну кількість прожитих днів
+
+let daysLived = Math.round(age * 365.25);
+
+// Виводимо результат
+console.log(daysLived); // 11688
+
+// КРОК 10. Код підтвердження
+
+// Генеруємо випадкове ціле число від 1000 до 9999 включно
+let confirmationCode = Math.floor(Math.random() * 9000) + 1000;
+
+// Виводимо код
+console.log(confirmationCode);
+
+// КРОК 11. Лічильник входів
+
+// Перший вхід — постфіксний інкремент
+console.log(visits++); // результат виразу: 0
+console.log(visits);   // поточне значення: 1
+
+// Другий вхід — префіксний інкремент
+console.log(++visits); // результат виразу: 2
+console.log(visits);   // поточне значення: 2
+
+// КРОК 12. Картка користувача
+
+console.log(`
+Користувач: ${fullName}
+Показувати як: ${displayName}
+Вік: ${age} (через 10 років — ${ageIn10Years})
+Email: ${maskedEmail}
+Повнолітній: ${isAdult}
+Підписка: ${isSubscribed}
+Входів: ${visits}
+Прожито днів: ${daysLived}
+Код підтвердження: ${confirmationCode}
+`);
+
+
 
 
